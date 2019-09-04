@@ -1,9 +1,12 @@
 import React, { Fragment, useState } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setAlert } from "../../actions/alert";
+import { register } from "../../actions/auth";
+import PropTypes from "prop-types";
 
-const Register = () => {
+const Register = ({ setAlert, register }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,9 +22,9 @@ const Register = () => {
   const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
-      console.log("Password do not match");
+      setAlert("Password do not match", "danger");
     } else {
-      console.log("SUCCESS");
+      register({ name, email, password });
     }
   };
 
@@ -68,9 +71,7 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <Button type="Submit" variant="contained" color="primary">
-            Submit
-          </Button>
+          <input type="Submit" className="btn btn-primary" />
         </div>
       </form>
       <div align="center">
@@ -83,4 +84,12 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { setAlert, register }
+)(Register);
