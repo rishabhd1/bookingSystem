@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://rishabhd2:instacar123@bookingsystem-6c99w.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "r10014522"
+}
