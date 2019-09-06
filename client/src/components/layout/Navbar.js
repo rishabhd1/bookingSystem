@@ -43,9 +43,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           />
           BOOKING
         </Link>
-        {!loading && (
-          <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-        )}
+        {<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>}
       </nav>
     </div>
   );
