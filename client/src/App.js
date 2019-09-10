@@ -6,7 +6,8 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Alert from "./components/layout/Alert";
 import Booking from "./components/layout/Booking";
-// import PrivateRoute from "./components/routing/PrivateRoute";
+import Payment from "./components/layout/Payment";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 //Redux
 import { Provider } from "react-redux";
@@ -30,14 +31,14 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
-          <Landing />
           <section className="container">
             <Alert />
             <Switch>
-              <Route exact path="/booking" component={Booking} />
+              <Route exact path="/" component={Landing} />
+              <PrivateRoute exact path="/booking" component={Booking} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              {/* <PrivateRoute exact path="/book" component={} /> */}
+              <PrivateRoute exact path="/payment" component={Payment} />
             </Switch>
           </section>
         </Fragment>

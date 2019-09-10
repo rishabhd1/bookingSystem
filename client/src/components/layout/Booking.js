@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Select from "@material-ui/core/Select";
+import Button from "@material-ui/core/Button";
 import PropTypes from "prop-types";
 import Register from "../auth/Register";
+import Payment from "./Payment";
 import { setAlert } from "../../actions/alert";
 import { booking } from "../../actions/booking";
 import { connect } from "react-redux";
@@ -61,11 +63,14 @@ const Landing = ({ setAlert, booking }) => {
             </Select>
           </div>
           <div className="form-group">
-            {/* <Link to="/booking"> */}
-            <button type="Submit" className="btn btn-primary">
+            <Button
+              component={Payment}
+              to="/payment"
+              type="Submit"
+              className="btn btn-primary"
+            >
               Book
-            </button>
-            {/* </Link> */}
+            </Button>
           </div>
         </form>
       </div>
