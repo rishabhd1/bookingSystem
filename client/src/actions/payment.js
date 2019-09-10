@@ -1,7 +1,7 @@
 import { PAYMENT_FAIL, PAYMENT_SUCCESS } from "./types";
 import axios from "axios";
 
-export const booking = ({ cardNumber, name }) => async dispatch => {
+export const payment = ({ cardNumber, name }) => async dispatch => {
   const config = {
     headers: {
       "Content-Type": "application/json"

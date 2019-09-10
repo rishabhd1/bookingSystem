@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 import { setAlert } from "../../actions/alert";
 import { booking } from "../../actions/booking";
 import { payment } from "../../actions/payment";
@@ -13,14 +15,7 @@ const Payment = ({ setAlert, payment, booking }) => {
     dropOffPoint: ""
   });
 
-  const {
-    pickUpPoint,
-    dropOffPoint,
-    cardNumber,
-    expiryDate,
-    cvv,
-    name
-  } = formData;
+  const { pickUpPoint, dropOffPoint, cardNumber, name } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -42,7 +37,7 @@ const Payment = ({ setAlert, payment, booking }) => {
           <TextField
             value={pickUpPoint}
             onChange={e => onChange(e)}
-            name="name"
+            name="pickUpPoint"
             placeholder="Pick Up Address"
             variant="outlined"
           />
@@ -51,7 +46,7 @@ const Payment = ({ setAlert, payment, booking }) => {
           <TextField
             value={dropOffPoint}
             onChange={e => onChange(e)}
-            name="email"
+            name="dropOffPoint"
             placeholder="Drop Off Address"
             variant="outlined"
           />

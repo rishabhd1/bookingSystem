@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import Register from "../auth/Register";
 import { setAlert } from "../../actions/alert";
@@ -28,5 +28,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { setAlert, booking }
+  { setAlert, payment }
 )(Landing);

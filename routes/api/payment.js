@@ -7,7 +7,7 @@ router.post(
   [
     check("cardNumber", "Card Number is required")
       .exists()
-      .isLength({ min: 16 })
+      .isLength({ min: 12 })
       .isNumeric(),
     check("name", "Name is required").isEmpty()
   ],
