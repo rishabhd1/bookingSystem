@@ -75,6 +75,17 @@ const Payment = ({ setAlert, payment, booking }) => {
             variant="outlined"
           />
         </div>
+        <div className="form-group">
+          <Button
+            component={Link}
+            to="/finalpage"
+            type="Submit"
+            variant="contained"
+            color="primary"
+          >
+            Confirm Payment
+          </Button>
+        </div>
       </form>
     </Fragment>
   );

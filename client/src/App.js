@@ -7,6 +7,7 @@ import Landing from "./components/layout/Landing";
 import Alert from "./components/layout/Alert";
 import Booking from "./components/layout/Booking";
 import Payment from "./components/layout/Payment";
+import FinalPage from "./components/layout/FinalPage";
 import PrivateRoute from "./components/routing/PrivateRoute";
 
 //Redux
@@ -39,6 +40,7 @@ const App = () => {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <PrivateRoute exact path="/payment" component={Payment} />
+              <PrivateRoute exact path="/finalpage" component={FinalPage} />
             </Switch>
           </section>
         </Fragment>
