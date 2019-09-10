@@ -4,7 +4,7 @@ import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
 import PropTypes from "prop-types";
 import Register from "../auth/Register";
-import Payment from "./Payment";
+import { Link } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { booking } from "../../actions/booking";
 import { connect } from "react-redux";
@@ -64,10 +64,11 @@ const Landing = ({ setAlert, booking }) => {
           </div>
           <div className="form-group">
             <Button
-              component={Payment}
+              component={Link}
               to="/payment"
               type="Submit"
-              className="btn btn-primary"
+              variant="contained"
+              color="primary"
             >
               Book
             </Button>
