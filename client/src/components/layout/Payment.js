@@ -1,6 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
+import { booking } from "../../actions/booking";
+import { payment } from "../../actions/payment";
+import PropTypes from "prop-types";
 import TextField from "@material-ui/core/TextField";
 import Register from "../auth/Register";
 
@@ -10,7 +13,14 @@ const Payment = ({ setAlert, payment, booking }) => {
     dropOffPoint: ""
   });
 
-  const { pickUpPoint, dropOffPoint } = formData;
+  const {
+    pickUpPoint,
+    dropOffPoint,
+    cardNumber,
+    expiryDate,
+    cvv,
+    name
+  } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,7 +43,7 @@ const Payment = ({ setAlert, payment, booking }) => {
             value={pickUpPoint}
             onChange={e => onChange(e)}
             name="name"
-            placeholder="Name"
+            placeholder="Pick Up Address"
             variant="outlined"
           />
         </div>
@@ -42,7 +52,26 @@ const Payment = ({ setAlert, payment, booking }) => {
             value={dropOffPoint}
             onChange={e => onChange(e)}
             name="email"
-            placeholder="Email"
+            placeholder="Drop Off Address"
+            variant="outlined"
+          />
+        </div>
+        <h1>Enter Payment Details</h1>
+        <div className="form-group">
+          <TextField
+            value={cardNumber}
+            onChange={e => onChange(e)}
+            name="cardNumber"
+            placeholder="Card Number"
+            variant="outlined"
+          />
+        </div>
+        <div className="form-group">
+          <TextField
+            value={name}
+            onChange={e => onChange(e)}
+            name="name"
+            placeholder="Name on Card"
             variant="outlined"
           />
         </div>
@@ -57,11 +86,11 @@ Register.propTypes = {
   booking: PropTypes.func.isRequired
 };
 
-mapStateToProps = state => ({
-  booking: state.booking
-});
+// mapStateToProps = state => ({
+//   booking: state.booking
+// });
 
 export default connect(
-  mapStateToProps,
+  null,
   { setAlert, payment, booking }
 )(Payment);
