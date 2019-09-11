@@ -5,7 +5,7 @@ import { setAlert } from "../../actions/alert";
 import { payment } from "../../actions/payment";
 import { connect } from "react-redux";
 
-const Landing = ({ setAlert, payment: { valid } }) => {
+const Landing = ({ setAlert, valid }) => {
   const transactionSuccess = <h1>Transaction Successful</h1>;
   const transactionFail = <h1>Transaction Failed</h1>;
   return (
@@ -23,7 +23,7 @@ Register.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  valid: state.payment.valid
+  valid: state.payment
 });
 
 export default connect(
