@@ -45,28 +45,3 @@ Go back to main directory from client
 cd ..
 npm run dev
 ```
-
-## Technologies Used
-
-Express.js
-Node.js
-React
-Redux
-MongoDB
-
-## Thought Process
-
-I went for MERN stack since I have not used it before so something new to learn.
-Also I had to use it once selected so, it proved to be a good preparation.
-
-## What is not working
-
-1. It shows transaction failed even with correct input.
-2. User can book without logging in sometimes.
-3. Docker
-
-## Other Issues/Limits
-
-1. There is no intensive input check. Only minor checks have been implemented.
-2. There is only 1 city booking, no multicity or package.
-3. Price calculation have been implemented only based on distance.
